@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Accordion from "./Accordion";
 import {Rating} from "./Rating";
+import OnOff from "./components/OnOff";
 
 function App() {
     console.log("App rendering")
@@ -12,7 +13,7 @@ function App() {
         Article 1
         <Rating value={3} />
         <Accordion titleValue={"Menu"} collapsed={true}/>
-        <Accordion titleValue={"Users"} collapsed={true}/>
+        <Accordion titleValue={"Users"} collapsed={false}/>
         Article 2
         <Rating value={0}/>
         <Rating value={1}/>
@@ -20,6 +21,7 @@ function App() {
         <Rating value={3}/>
         <Rating value={4}/>
         <Rating value={5}/>
+        <OnOff value={false}/>
     </div>
   );
 }
