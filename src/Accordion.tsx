@@ -20,8 +20,6 @@ function Accordion(props: AccordionPropsType) {
             </div>
         )
     }
-
-
 }
 
 type AccordionTitlePropsType = {
