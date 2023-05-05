@@ -1,6 +1,5 @@
-import React, {useState, MouseEvent} from "react";
+import React, {FocusEventHandler, MouseEvent, useState} from "react";
 import {Simulate} from "react-dom/test-utils";
-import rateChange = Simulate.rateChange;
 
 
 export function UncontrolledRating() {
@@ -27,15 +26,18 @@ type StarPropsType = {
     id:number
 }
 
-function Star(props: StarPropsType) {
+function Star(props: StarPropsType): JSX.Element {
+    const {id, selected, ratingCallback} = props;
 
-    const onClickHandler = (event:MouseEvent<HTMLSpanElement>) => {
-        props.ratingCallback(props.id)
+    const onClickHandler = (event: MouseEvent<HTMLSpanElement>) => {
+        ratingCallback(id)
     }
+
+    //добавить onBlur
     return (
-        <>
-        {props.selected ? <span  onClick={onClickHandler}><b>star</b></span> : <span onClick={onClickHandler}>star</span>}
-        </>
+        <span onClick={onClickHandler}>
+            {selected ? <b>star</b> : <>star</>}
+        </span>
     )
 
 }
