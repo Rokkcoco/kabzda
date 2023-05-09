@@ -1,11 +1,10 @@
-import React, {FocusEventHandler, MouseEvent, useState} from "react";
-import {Simulate} from "react-dom/test-utils";
+import React, {MouseEvent, useState} from "react";
 
 
 export function UncontrolledRating() {
     let [value, setValue] = useState<number>(0)
-    const ratingCallback = (number:number) => {
-        setValue(number)
+    const ratingCallback = (id: 1 | 2 | 3 | 4 | 5) => {
+        setValue(id)
     }
 
     return (
@@ -22,8 +21,8 @@ export function UncontrolledRating() {
 
 type StarPropsType = {
     selected: boolean
-    ratingCallback: (e:number)=>void
-    id:number
+    ratingCallback: (e: 1 | 2 | 3 | 4 | 5)=>void
+    id: 1 | 2 | 3 | 4 | 5
 }
 
 function Star(props: StarPropsType): JSX.Element {
