@@ -26,7 +26,7 @@ function UncontrolledAccordion(props: AccordionPropsType) {
 
 
 function AccordionTitle(props:AccordionTitlePropsType) {
-    console.log("AccordionTitle rendering")
+    console.log("UncontrolledAccordionTitle rendering")
     const onClickHandler = (event:MouseEvent<HTMLHeadingElement>) => {
     props.callback(!props.collapsed)
     }
@@ -36,7 +36,7 @@ function AccordionTitle(props:AccordionTitlePropsType) {
 }
 
 function AccordionBody() {
-    console.log("AccordionBody rendering")
+    console.log("UncontrolledAccordionBody rendering")
     return <ul>
         <li>1</li>
         <li>2</li>
