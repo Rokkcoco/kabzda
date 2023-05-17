@@ -6,7 +6,7 @@ type ItemType = {
 }
 
 type SelectPropsType = {
-    value:any
+    value?:any
     onChange:(value:any)=>void
     items:ItemType[]
 }
