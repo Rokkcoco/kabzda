@@ -16,7 +16,7 @@ function App() {
     const accordionAlertHandler = (value:any) => {
         alert(`User with ID ${value}`)
     }
-        let b
+
     return (
     <div className={"App"}>
         {/*<PageTitle title={"This is APP component"} />

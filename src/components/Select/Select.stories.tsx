@@ -1,5 +1,4 @@
-import React, {useState} from "react";
-import {RatingValueType} from "../../App";
+import React from "react";
 import {Select} from "./Select";
 import {action} from "@storybook/addon-actions";
 

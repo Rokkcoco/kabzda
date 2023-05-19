@@ -1,0 +1,14 @@
+.select {
+    border: 1px solid black;
+}
+
+.select .items {
+    display: none;
+    position: absolute;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.select.active .items {
+    display: block;
+}
