@@ -1,14 +1,18 @@
-.select {
+.select .main {
     border: 1px solid black;
+    display: inline-block;
+    min-width: 40px;
+    min-height: 20px;
+
 }
 
-.select .items {
-    display: none;
+.items {
     position: absolute;
     padding: 5px;
     border: 1px solid black;
 }
 
-.select.active .items {
-    display: block;
+.item.selected {
+    background-color: blue;
+    color: white;
 }

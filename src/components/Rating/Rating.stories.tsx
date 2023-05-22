@@ -1,6 +1,7 @@
-import React, {useState} from "react";
 import {Rating} from "./Rating";
+import {useState} from "react";
 import {RatingValueType} from "../../App";
+
 
 export default {
     title: 'Rating',
