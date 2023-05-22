@@ -1,9 +1,12 @@
 import React, {FC, useState, MouseEvent} from 'react';
 import s from "./OnOff.module.css";
+type OnOffType = {
+    on: boolean
+    onChange: (value:boolean)=>void
+}
 
+const OnOff:FC<OnOffType> = ({on,onChange}):JSX.Element => {
 
-const OnOff = ():JSX.Element => {
-    let [on, setOn] = useState<boolean>(true)
     const onStyle ={
         width: "30px",
         height: "20px",
@@ -31,11 +34,11 @@ const OnOff = ():JSX.Element => {
         backgroundColor: !on ? "mediumvioletred" : "greenyellow"
     }
     const buttonClickHandler = (event:MouseEvent<HTMLDivElement>) => {
-        setOn(true)
+        onChange(true)
     }
 
     const buttonTurnOffClickHandler = (event:MouseEvent<HTMLDivElement>) => {
-        setOn(false)
+       onChange(false)
     }
     //можно вызвать buttonClickHandler или просто вставить колбэк () => { setOn( on = true ) }, это идентично
     return (

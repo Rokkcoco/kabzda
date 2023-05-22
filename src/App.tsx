@@ -14,10 +14,14 @@ function App() {
 
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     const [collapsed, setCollapsed] = useState<boolean>(false)
+    let [on, setOn] = useState<boolean>(true)
     const accordionAlertHandler = (value:any) => {
         alert(`User with ID ${value}`)
     }
 
+    const onChange = (value:boolean) =>{
+        setOn(value)
+    }
     return (
     <div className={"App"}>
         {/*<PageTitle title={"This is APP component"} />
@@ -33,7 +37,7 @@ function App() {
         <Rating value={3}/>
         <Rating value={4}/>*/}
         <Rating ratingValue={ratingValue} setRatingValue={setRatingValue}/>
-        <OnOff/>
+        <OnOff on={on} onChange={onChange}/>
         <UncontrolledAccordion titleValue={"Menu"}/>
         <UncontrolledAccordion titleValue={"Users"}/>
         <UncontrolledRating/>
