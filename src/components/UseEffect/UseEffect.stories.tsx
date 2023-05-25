@@ -5,7 +5,7 @@ export default {
     title: "useEffect demo"
 }
 
-export const Example1 = () => {
+export const SimpleExample = () => {
     const [counter, setCounter] = useState(1)
 
     console.log("SimpleExample")
@@ -37,3 +37,25 @@ export const Example1 = () => {
     </>
 }
 
+export const SetTimeoutExample = () => {
+    const [counter, setCounter] = useState(1)
+
+    console.log("SetTimeoutExample")
+
+
+    useEffect(()=>{ //вызывает сетТаймаут при изменении counter
+
+       setInterval(()=>{
+           setCounter(state => state + 1)
+       },1000)
+
+    },[])
+/*!!! Создаем сетинтервал с сеттером когда он каждый раз берет старое значение и прибавляет к нему новое
+        Это кардинально отличается в данном случае от state + 1, когда произойдет замыкание и функция запомнит свое окружение
+        Тогда каждый вызов будет state(1) + 1 будет давать 2*/
+
+    return <>
+        Hello, {counter}
+        <button onClick={()=>setCounter(counter + 1)}>+</button>
+    </>
+}
