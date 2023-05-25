@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 
 export default {
-    title: "React.memo demo"
+    title: "useState demo"
 }
 
 function generateData() {
