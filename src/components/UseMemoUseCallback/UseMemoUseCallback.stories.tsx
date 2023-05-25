@@ -10,7 +10,7 @@ export const DifficultCountingExample = () => {
     let resultA = 1
     let resultB = 1
 
-    resultA = useMemo(() => {
+    resultA = useMemo(() => { //Мемо запоминает результат вычислений и его зависимость []
         let tempResultA = 1
         for (let i = 1; i <= a; i++) {
             let fake = 0
@@ -47,12 +47,12 @@ const UsersSecret = (props: { users: Array<string> }) => {
     </div>
 }
 
-const Users = React.memo(UsersSecret)
+const Users = React.memo(UsersSecret)  //Реакт.мемо запоминает результат компонента и если ничего не изменилось в ней, то не вызывает
 export const HelpsToReactMemo = () => {
     const [counter, setCounter] = useState(0)
     const [users, setUsers] = useState(["Dimych", "Valera", "Artem"])
 
-    const newArray = useMemo(() => {
+    const newArray = useMemo(() => { //чтобы компонент не перерисовывался из-за создания нового массива, а если результат так и будет 1 и тем же, то надо добавить юзМемо, что будет хранить эти вычисления
         const newArray = users.filter(t => t.toLowerCase().indexOf("a") > -1)
         return newArray
     }, [users])
@@ -76,14 +76,14 @@ export const LikeUseCallback = () => {
     const [books, setBooks] = useState(["React", "JS", "HTML", "CSS"])
 
 
-    const memoizedAddBook = useMemo(() => {
+    const memoizedAddBook = useMemo(() => { //в юзМемо можно передать и результат вызова функции, но надо через колбэк
         return () => {
             const newUsers = [...books, "Angular " + new Date().getTime()]
             setBooks(newUsers)
         }
     }, [books])
 
-    const memoizedAddBook2 = useCallback(() => {
+    const memoizedAddBook2 = useCallback(() => { //аналог юзМемо, но с проще синтаксисом
         const newUsers = [...books, "Angular " + new Date().getTime()]
         setBooks(newUsers)
     }, [books])
