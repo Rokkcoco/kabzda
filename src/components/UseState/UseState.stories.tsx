@@ -17,7 +17,8 @@ export const Exampl1 = () => {
     const increment = (state: number) => state + 1
 
     return <>
-    <button onClick={()=>setCounter(increment)}>+</button> //в юзСтейт можно передать функцию и будет ее вызывать или составить колбэк в нем
+    <button onClick={()=>setCounter(increment)}>+</button>
         {counter}
     </>
 }
+//в юзСтейт можно передать функцию и будет ее вызывать или составить колбэк в нем
