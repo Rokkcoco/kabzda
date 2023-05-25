@@ -47,12 +47,12 @@ const UsersSecret = (props: { users: Array<string> }) => {
     </div>
 }
 
-const Users = React.memo(UsersSecret)  //Реакт.мемо запоминает результат компонента и если ничего не изменилось в ней, то не вызывает
+const Users = React.memo(UsersSecret)  //Реакт.мемо запоминает результат компоненты и если ничего не изменилось в ней, то не вызывает
 export const HelpsToReactMemo = () => {
     const [counter, setCounter] = useState(0)
     const [users, setUsers] = useState(["Dimych", "Valera", "Artem"])
 
-    const newArray = useMemo(() => { //чтобы компонент не перерисовывался из-за создания нового массива, а если результат так и будет 1 и тем же, то надо добавить юзМемо, что будет хранить эти вычисления
+    const newArray = useMemo(() => { //чтобы компонента не перерисовывалась из-за создания нового массива, а если результат так и будет 1 и тем же, то надо добавить юзМемо, что будет хранить эти вычисления
         const newArray = users.filter(t => t.toLowerCase().indexOf("a") > -1)
         return newArray
     }, [users])
