@@ -9,7 +9,7 @@ export const DifficultCountingExample = () => {
     const [b, setB] = useState<number>(5)
     let resultA = 1
     let resultB = 1
-
+//юзмемо запоминает вызов функции если из него ничего не return, если return стоит то запоминает результат вычеслений
     resultA = useMemo(() => { //Мемо запоминает результат вычислений и его зависимость []
         let tempResultA = 1
         for (let i = 1; i <= a; i++) {
