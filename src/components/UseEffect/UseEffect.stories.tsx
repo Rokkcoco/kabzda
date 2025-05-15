@@ -122,6 +122,7 @@ export const SetTimeoutExample = () => {
         }
     }, [text])
 //будем удалять эффект не дожидаясь результата при анмаунте компоненты
+// так же useEffect работает асинхронно, а componentDidMount синхронно, и clean-up будет срабатывать при изменении зависимости
     return <>
        text: {text}
     </>

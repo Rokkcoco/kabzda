@@ -5,6 +5,7 @@ type RatingProps = {
     ratingValue: RatingValueType
     setRatingValue: (value:RatingValueType) => void
 }
+
 export function Rating(props: RatingProps) {
     console.log("UncontrolledRating rendering")
         return (
